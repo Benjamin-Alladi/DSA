@@ -23,11 +23,12 @@ class Test{
             System.out.println("Hello! "+c);
         }
     }
+
     public static void main(String[] args) {
 
      Scanner sc= new Scanner(System.in);
-    //  ff(5);
-    //  fr(5);
+     ff(5);
+     fr(5);
      sc.close();
     }
 }

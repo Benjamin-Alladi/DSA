@@ -3,6 +3,7 @@ import java.util.*;
 
 public class SelectionSort {
 
+    // Select the element and swap it with the minimum element present in the remaining part of Array.
     static void ss(int[] a, int n)
     {
         for(int i=0;i<n;i++)
@@ -27,6 +28,7 @@ public class SelectionSort {
         }
     }
 
+    // Select the element and swap it with the maximum element present in the remaining part of Array.
     static void ss_DO(int[] a,int n)
     {
         for(int i=0;i<n;i++)
