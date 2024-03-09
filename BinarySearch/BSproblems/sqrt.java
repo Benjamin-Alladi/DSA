@@ -1,4 +1,4 @@
-package Searching.BSproblems;
+package BinarySearch.BSproblems;
 import java.util.*;
 
 class Solution {

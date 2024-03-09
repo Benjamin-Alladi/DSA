@@ -1,3 +1,4 @@
+package BinarySearch;
 import java.util.*;
 
 class FloorCeiling{
@@ -12,7 +13,7 @@ class FloorCeiling{
         }
         else
         {
-            int s=0, e=a.length;
+            int s=0, e=a.length-1;
 
             while(s<=e)
             {

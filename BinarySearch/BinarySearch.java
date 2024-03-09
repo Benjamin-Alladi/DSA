@@ -1,6 +1,7 @@
+package BinarySearch;
 import java.util.*;
 
-class BinarySearch {
+class BinarySearch{
 
     static int bs(int[] a,int t)
     {
