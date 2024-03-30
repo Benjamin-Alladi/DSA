@@ -3,38 +3,31 @@ import java.util.*;
 
 class Solution {
 
-    public static int sqrt(int x) {
+    public static int sqrt(int n) {
+        long l=1,h=n;
 
-        if(x==0 || x==1)
-        {
-            return x;
-        }
-
-        long l=1,h=x;
         while(l<=h)
         {
-            long m=l+(h-l)/2;
-
-            if(m*m==x)
+            long m= (l+h)>>1;
+            if(m*m==n)
             {
                 return (int)m;
             }
-            else if(m*m>x)
+            else if(m*m>n)
             {
                 h=m-1;
             }
-            else
+            else if(m*m<n)
             {
                 l=m+1;
             }
         }
-
-        return Math.round(h);
+        return (int)h;
     }
 
     public static void main(String[] args) {
         Scanner sc= new Scanner(System.in);
-        System.out.println(sqrt(100));
+        System.out.println(sqrt(28));
         sc.close();
     }
 }
