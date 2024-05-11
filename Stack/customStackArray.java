@@ -1,16 +1,16 @@
 package Stack;
 import java.util.*;
 
-public class customStack {
+public class customStackArray {
     protected int[] array;
     private static final int SIZE=10;
     int index=-1;
 
-    customStack()
+    customStackArray()
     {
         this(SIZE);
     }
-    customStack(int size)
+    customStackArray(int size)
     {
         this.array=new int[size];
     }
@@ -88,7 +88,7 @@ public class customStack {
     }
 
     public static void main(String[] args) {
-        customStack s=new customStack(6);
+        customStackArray s=new customStackArray(6);
         
         System.out.println(s.isEmpty());
         System.out.println(s.isFull());

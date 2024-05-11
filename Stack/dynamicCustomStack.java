@@ -2,7 +2,7 @@ package Stack;
 import java.util.*;
 
 // extending customStack class to use its functionality
-public class dynamicCustomStack extends customStack{
+public class dynamicCustomStack extends customStackArray{
 
     dynamicCustomStack()
     {
