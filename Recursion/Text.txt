@@ -1,4 +1,4 @@
-***Types of Recursion:
+***Types of Recursion: (Parametric and Functional Recursion)
 
 1. Head Recursion:
     Recursive call is the first statement of the function. There are no operations before the recursive call.
