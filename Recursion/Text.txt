@@ -1,0 +1,23 @@
+***Types of Recursion:
+
+1. Head Recursion:
+    Recursive call is the first statement of the function. There are no operations before the recursive call.
+
+2. Tail Recursion:
+    Recursive call is the last statement of the function. There are no operations after the recursive call.
+
+3. Linear Recursion:
+    The function calls itself for only once.
+    Only 1 recursive call.
+    Ex: print1toN, printNto1, Factorial.
+
+4. Tree Recursion:
+    Multiple Recursive calls.
+    Ex: Fibonacci, Climbing Stairs.
+
+
+5. Direct Recursion:
+    f()->f()->f().
+
+6. Indirect Recursion:
+    f()->g()->f().
