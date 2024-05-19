@@ -1,7 +1,7 @@
 package Subsequences;
 import java.util.*;
 
-class printSubsequence {
+class printSubsequences{
 
     static void func(int ind,int[] a, ArrayList<Integer> al)
     {
