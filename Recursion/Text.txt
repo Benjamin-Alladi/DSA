@@ -21,3 +21,9 @@
 
 6. Indirect Recursion:
     f()->g()->f().
+
+
+Types of Approaches:
+
+1. IBH: Induction Base-Condition Hypothesis
+2. Decision Tree
