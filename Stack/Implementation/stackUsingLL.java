@@ -1,78 +1,67 @@
-package Stack;
+package Implementation;
 
-class Node{
-    int data;
-    Node next;
-    Node(int d)
-    {
-        this.data=d;
-    }
-}
-public class stackLL {
-    private Node head=null,tail=null;
-    private int size=0;
+// pop(): O(1)
+public class stackUsingLL {
+    
+    private Node head=null;
+    int size=0;
 
     public boolean isEmpty()
     {
         return head==null;
     }
 
+    // O(1)
     public void push(int d)
     {
-        Node n=new Node(d);
         size++;
+        Node n=new Node(d);
         if(head==null)
         {
-            head=tail=n;
+            head=n;
             return;
         }
-        tail.next=n;
-        tail=n;
+
+        n.next=head;
+        head=n;
     }
 
+    // O(1)
     public int peek()
     {
         if(isEmpty())
         {
-            System.out.println("Stack is Empty!");
+            System.out.println("Stack is Empty");
             return -1;
         }
-        return tail.data;
+
+        return head.data;
     }
+
+    // O(1)
     public int pop()
     {
         if(isEmpty())
         {
-            System.out.println("Can't pop because Stack is Empty!");
+            System.out.println("Can't pop because stack is Empty!");
             return -1;
         }
 
-        if(head.next==null)
-        {
-            int val=head.data;
-            head=null;
-            size--;
-            return val;
-        }
-
-        Node t=head,prev=null;
-        while(t.next!=null)
-        {
-            prev=t;
-            t=t.next;
-        }
-        tail=prev;
+        Node t=head;
+        head=head.next;
+        t.next=null;
         size--;
-        tail.next=null;
 
         return t.data;
     }
 
+    // O(1)
     public int size()
     {
         return size;
     }
 
+    // O(N)
     public void display()
     {
         if(isEmpty())
@@ -80,7 +69,6 @@ public class stackLL {
             System.out.println("Empty");
             return;
         }
-
         Node t=head;
         while(t!=null)
         {
@@ -90,9 +78,10 @@ public class stackLL {
         System.out.println("End");
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
+        stackUsingLL s=new stackUsingLL();
 
-        stackLL s=new stackLL();
         System.out.println(s.isEmpty());
 
         s.push(1);

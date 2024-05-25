@@ -1,65 +1,80 @@
-package Stack;
+package Implementation;
 
-public class stackUsingLL {
-    private Node head=null;
-    int size=0;
+class Node{
+    int data;
+    Node next;
+    Node(int d)
+    {
+        this.data=d;
+    }
+}
+
+// pop(): O(N)
+public class stackLL {
+    private Node head=null,tail=null;
+    private int size=0;
 
     public boolean isEmpty()
     {
         return head==null;
     }
 
-    // O(1)
     public void push(int d)
     {
-        size++;
         Node n=new Node(d);
+        size++;
         if(head==null)
         {
-            head=n;
+            head=tail=n;
             return;
         }
-
-        n.next=head;
-        head=n;
+        tail.next=n;
+        tail=n;
     }
 
-    // O(1)
     public int peek()
     {
         if(isEmpty())
         {
-            System.out.println("Stack is Empty");
+            System.out.println("Stack is Empty!");
             return -1;
         }
-
-        return head.data;
+        return tail.data;
     }
-
-    // O(1)
     public int pop()
     {
         if(isEmpty())
         {
-            System.out.println("Can't pop because stack is Empty!");
+            System.out.println("Can't pop because Stack is Empty!");
             return -1;
         }
 
-        Node t=head;
-        head=head.next;
-        t.next=null;
+        if(head.next==null)
+        {
+            int val=head.data;
+            head=null;
+            size--;
+            return val;
+        }
+
+        Node t=head,prev=null;
+        while(t.next!=null)
+        {
+            prev=t;
+            t=t.next;
+        }
+        tail=prev;
         size--;
+        tail.next=null;
 
         return t.data;
     }
 
-    // O(1)
     public int size()
     {
         return size;
     }
 
-    // O(N)
     public void display()
     {
         if(isEmpty())
@@ -67,6 +82,7 @@ public class stackUsingLL {
             System.out.println("Empty");
             return;
         }
+
         Node t=head;
         while(t!=null)
         {
@@ -76,10 +92,9 @@ public class stackUsingLL {
         System.out.println("End");
     }
 
-    public static void main(String[] args)
-    {
-        stackUsingLL s=new stackUsingLL();
+    public static void main(String[] args) {
 
+        stackLL s=new stackLL();
         System.out.println(s.isEmpty());
 
         s.push(1);

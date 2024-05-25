@@ -1,4 +1,4 @@
-package Stack;
+package Implementation;
 import java.util.*;
 
 // extending customStack class to use its functionality

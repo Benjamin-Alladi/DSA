@@ -1,4 +1,4 @@
-package Stack;
+package Implementation;
 import java.util.*;
 
 public class customStackArray {
