@@ -23,7 +23,11 @@
     f()->g()->f().
 
 
-Types of Approaches:
-
+***Types of Approaches:
 1. IBH: Induction Base-Condition Hypothesis
 2. Decision Tree
+
+***Recursion cab be applied if you can identify:
+1. Base-Condition.
+2. Problem dividing into SubProblems. The code structure of subproblems and main problem should be same.
+3. Combine and Return the results of subprolems.
