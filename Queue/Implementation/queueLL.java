@@ -1,4 +1,4 @@
-package Queue;
+package Queue.Implementation;
 
 class Node
 {
