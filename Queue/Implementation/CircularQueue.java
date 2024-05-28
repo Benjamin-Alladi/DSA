@@ -1,74 +1,122 @@
-public class customQueue {
+public class CircularQueue {
+    int[] q;
+    int front=-1,rear=-1,count=0;
 
-    private int[] q;
-    private int front=-1,rear=-1,size=6;
-    customQueue()
+    CircularQueue()
     {
-        q=new int[size];
+        q=new int[6];
     }
-    customQueue(int size)
+    CircularQueue(int size)
     {
-        this.size=size;
         q=new int[size];
     }
 
     public void enqueue(int val)
     {
-        if(rear==q.length-1)
+        if(count==q.length)
         {
-            System.out.println("Cant Enqueue "+val+" because Queue is Full!");
+            System.out.println("Cant Enqueue because Queue is Full!");
             return;
         }
 
-        q[++rear]=val;
-        if(rear==0)
+        rear=(rear+1)%q.length;
+        q[rear]=val;
+        count++;
+        if(count==1)
         {
-            front++;
+            front=0;
         }
     }
 
     public int dequeue()
     {
-        if(front==-1)
+        if(count==0)
         {
             System.out.println("Cant Dequeue because Queue is Empty!");
             return -1;
         }
 
-        int val=q[front++];
-        if(front==q.length)
+        count--;
+        int val=q[front];
+        if(front==rear)
         {
             front=rear=-1;
+        }
+        else
+        {
+            front=(front+1)%q.length;
         }
         return val;
     }
 
     public int peek()
     {
-        if(front==-1)
+        if(isEmpty())
         {
             return -1;
         }
         return q[front];
     }
 
+    public boolean isEmpty()
+    {
+        return count==0;
+    }
+
+    public boolean isFull()
+    {
+        return count==q.length;
+    }
+
+    /*
     public void display()
     {
-        if(front==-1)
+        if(isEmpty())
         {
             System.out.println("Queue is Empty!");
             return;
         }
 
-        for(int i=front;i<=rear;i++)
+        if(front<=rear)
         {
-            System.out.print(q[i]+"<-");
+            for(int i=front;i<=rear;i++)
+            {
+                System.out.print(q[i]+"<-");
+            }
+            System.out.println("End");
+        }
+        else
+        {
+            for(int i=front;i<q.length;i++)
+            {
+                System.out.print(q[i]+"<-");
+            }
+            for(int i=0;i<=rear;i++)
+            {
+                System.out.print(q[i]+"<-");
+            }
+            System.out.println("End");
+        }
+    }
+    */
+
+    public void display()
+    {
+        if(isEmpty())
+        {
+            System.out.println("Queue is Empty!");
+            return;
+        }
+
+        for(int i=0;i<count;i++)
+        {
+            System.out.print(q[(front+i)%q.length] +"<-");
         }
         System.out.println("End");
     }
     public static void main(String[] args) {
         
-        customQueue q=new customQueue();
+        CircularQueue q=new CircularQueue();
 
         System.out.println("Peak: "+q.peek());
         q.enqueue(1);

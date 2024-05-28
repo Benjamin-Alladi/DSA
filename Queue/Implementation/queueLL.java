@@ -1,5 +1,3 @@
-package Queue.Implementation;
-
 class Node
 {
     int data;
